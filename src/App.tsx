@@ -1,4 +1,3 @@
-// App.tsx
 import React from 'react';
 import { Route, Routes } from "react-router";
 import MapPage from "./pages/Map/MapPage";
@@ -10,12 +9,13 @@ import { AppProvider } from './services/AppContext';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 const App: React.FC = () => {
+    const storedUser = localStorage.getItem('user')
     return (
         <AppProvider>
             <div>
                 <Header />
                 <Routes>
-                    <Route path='/login' element={<LoginPage />} />
+                    {!storedUser && <Route path='/login' element={<LoginPage />} />}
                     <Route path='/' element={<ProtectedRoute element={<MapPage />} />} />
                     <Route path='/algorithm' element={<ProtectedRoute element={<AlgorithmPage />} />} />
                     <Route path='/additional-data' element={<ProtectedRoute element={<ReferenceDataPage />} />} />

@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, useContext, ChangeEvent } from "react";
 import {
   Table,
   TableBody,
@@ -10,35 +10,20 @@ import {
   TextField,
   Button
 } from "@mui/material";
-
-interface CarType {
-  id: number;
-  name: string;
-  length: string;
-  weight: string;
-  additionalInfo: string;
-}
-
-const initialData: CarType[] = [
-  {
-    id: 1,
-    name: "Седан",
-    length: "4.5 м",
-    weight: "1.5 т",
-    additionalInfo: "Четырехдверный автомобиль"
-  },
-  {
-    id: 2,
-    name: "Хэтчбек",
-    length: "4.0 м",
-    weight: "1.3 т",
-    additionalInfo: "Компактный автомобиль"
-  }
-];
+import { AppContext } from '../../services/AppContext';
+import { CarType, initialData } from "../../data/mockData";
 
 const ReferenceDataPage: React.FC = () => {
   const [data, setData] = useState<CarType[]>(initialData);
   const [editIdx, setEditIdx] = useState<number | null>(null);
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error('ReferenceDataPage must be used within an AppProvider');
+  }
+
+  const { state } = context;
+  const userRole = state.user?.role;
 
   const handleEdit = (idx: number) => {
     setEditIdx(idx);
@@ -57,7 +42,6 @@ const ReferenceDataPage: React.FC = () => {
     setData(newData);
   };
 
-
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -67,7 +51,7 @@ const ReferenceDataPage: React.FC = () => {
             <TableCell>Средняя длина типа</TableCell>
             <TableCell>Средний вес типа</TableCell>
             <TableCell>Дополнительная информация</TableCell>
-            <TableCell>Действия</TableCell>
+            {userRole !== 'user' && <TableCell>Действия</TableCell>}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -113,13 +97,15 @@ const ReferenceDataPage: React.FC = () => {
                   row.additionalInfo
                 )}
               </TableCell>
-              <TableCell>
-                {editIdx === idx ? (
-                  <Button onClick={handleSave}>Сохранить</Button>
-                ) : (
-                  <Button onClick={() => handleEdit(idx)}>Редактировать</Button>
-                )}
-              </TableCell>
+              {userRole !== 'user' && (
+                <TableCell>
+                  {editIdx === idx ? (
+                    <Button onClick={handleSave}>Сохранить</Button>
+                  ) : (
+                    <Button onClick={() => handleEdit(idx)}>Редактировать</Button>
+                  )}
+                </TableCell>
+              )}
             </TableRow>
           ))}
         </TableBody>

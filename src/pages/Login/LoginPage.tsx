@@ -20,14 +20,15 @@ const LoginPage: React.FC = () => {
   const handleLogin = () => {
     const user = users.find(u => u.username === username && u.password === password);
     if (user) {
-      updateUser(user.name);
-      navigate('/'); // Перенаправление на главную страницу
+      updateUser(user);
+      navigate('/');
     } else {
       setError('Invalid username or password');
     }
   };
 
   return (
+    
     <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" height="90vh">
       <Box width="100%" maxWidth="400px" padding="16px" boxShadow={3} borderRadius="8px">
         <Typography variant="h4" gutterBottom>Введите логин и пароль</Typography>
@@ -50,7 +51,7 @@ const LoginPage: React.FC = () => {
           fullWidth
         />
         <Button variant="contained" color="primary" onClick={handleLogin} fullWidth>
-          Войти
+          Авторизоваться
         </Button>
       </Box>
     </Box>
