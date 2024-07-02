@@ -9,6 +9,7 @@ const Header = () => {
     const linksData = [
         {title: 'Карта', url: '/'},
         {title: 'Алгоритм', url: '/algorithm'},
+        {title: 'Дополнительная информация', url: '/additional-data'}
     ]
 
     return (

@@ -2,8 +2,10 @@ import React from 'react';
 
 const MapImage = () => {
     return (
-        <div>
-            
+        <div
+            id="map"
+            style={{width: "600px", height: "400px"}}
+        >
         </div>
     );
 };

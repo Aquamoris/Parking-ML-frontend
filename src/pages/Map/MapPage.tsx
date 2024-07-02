@@ -1,7 +1,7 @@
 import React from 'react';
 import CitySelect from "../../components/Map/CitySelect";
 
-const Map = () => {
+const MapPage = () => {
     return (
         <div>
             <CitySelect
@@ -14,4 +14,4 @@ const Map = () => {
     );
 };
 
-export default Map;
+export default MapPage;
