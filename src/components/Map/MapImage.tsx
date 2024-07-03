@@ -1,11 +1,13 @@
 import React from 'react';
+import styles from './MapImage.module.scss';
 
 const MapImage = () => {
     return (
-        <div
-            id="map"
-            style={{width: "600px", height: "400px"}}
-        >
+        <div className={styles.map}>
+            <div className={styles.map__pointer}>
+                <div className={styles.map__pointer_head}></div>
+                <div className={styles.map__pointer_body}></div>
+            </div>
         </div>
     );
 };
