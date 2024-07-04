@@ -5,6 +5,7 @@ interface IModal {
     address: string,
     amount: number,
     color: string,
+    time: string,
     close: () => void
 }
 
@@ -12,7 +13,7 @@ function countPlaces(amount: number, percent: number) {
     return amount - Math.floor(amount * percent);
 }
 
-const Modal: React.FC<Partial<IModal>> = ({ address, amount, color, close }) => {
+const Modal: React.FC<Partial<IModal>> = ({ address, amount, color, close, time }) => {
     let freeAmount = 0;
     if (amount) {
         if (color === '#2AA06E') {
@@ -27,7 +28,7 @@ const Modal: React.FC<Partial<IModal>> = ({ address, amount, color, close }) => 
     return (
         <div className={styles.modal} onClick={close}>
             <div className={styles.content}>
-                <p>Обновлено 1 минуту назад</p>
+                <p>Обновлено {time} назад</p>
                 {address ? <div>Адрес: {address}</div> : null }
                 <div>Свободных мест: {freeAmount}</div>
                 {amount ? <div>Всего мест: {amount}</div> : null}
