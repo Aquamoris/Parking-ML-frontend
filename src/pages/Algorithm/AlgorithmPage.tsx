@@ -7,6 +7,8 @@ const AlgorithmPage: React.FC = () => {
     const [image, setImage] = useState<File | null>(null);
     const [imagePreview, setImagePreview] = useState<string | null>(null);
     const [freeSpots, setFreeSpots] = useState<number | null>(null);
+    const [carsCount, setCarsCount] = useState<number | null>(null);
+
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
@@ -27,6 +29,7 @@ const AlgorithmPage: React.FC = () => {
             });
             const { vehicle_count } = await response.data;
             setFreeSpots(parkingSpots - vehicle_count);
+            setCarsCount(vehicle_count)
         } catch (error) {
             console.error('Ошибка при отправке изображения', error);
         }
@@ -76,8 +79,10 @@ const AlgorithmPage: React.FC = () => {
                 )}
                 {freeSpots !== null && (
                     <Typography variant="h6" style={{ marginTop: '20px' }}>
-                        Количество свободных мест: {freeSpots}
+                        Количество свободных мест: {freeSpots} <br/>
+                        Количество машин на парковке {carsCount}
                     </Typography>
+                    
                 )}
             </Box>
         </div>
