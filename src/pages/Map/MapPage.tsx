@@ -5,6 +5,10 @@ import MapImage from "../../components/Map/MapImage";
 const MapPage = () => {
     const [area, setArea] = useState('');
 
+    const changeCityHandler = (e: any) => {
+        setArea(e.target.value)
+    }
+
     return (
         <div>
             <CitySelect
@@ -12,8 +16,9 @@ const MapPage = () => {
                 minWidth={120}
                 maxWidth={200}
                 values={['Район центр', 'Первореченский район']}
+                changeCity={changeCityHandler}
             />
-            <MapImage />
+            <MapImage area={area}/>
         </div>
     );
 };
