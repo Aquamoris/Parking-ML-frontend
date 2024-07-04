@@ -11,7 +11,7 @@ interface ICitySelect {
 
 const CitySelect: React.FC<ICitySelect> = ({ label, minWidth, maxWidth, values, changeCity }) => {
     return (
-        <Box sx={{ minWidth, maxWidth }}>
+        <Box sx={{ minWidth, maxWidth, display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
             <FormControl variant="standard" sx={{ m: 2 }} fullWidth>
                 <InputLabel id="demo-simple-select-standard-label">{label}</InputLabel>
                 <Select

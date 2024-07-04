@@ -3,7 +3,7 @@ import CitySelect from "../../components/Map/CitySelect";
 import MapImage from "../../components/Map/MapImage";
 
 const MapPage = () => {
-    const [area, setArea] = useState('');
+    const [area, setArea] = useState('Район центр');
 
     const changeCityHandler = (e: any) => {
         setArea(e.target.value)
@@ -12,7 +12,7 @@ const MapPage = () => {
     return (
         <div>
             <CitySelect
-                label={'Город'}
+                label={'Район'}
                 minWidth={120}
                 maxWidth={200}
                 values={['Район центр', 'Первореченский район']}
