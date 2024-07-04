@@ -38,9 +38,14 @@ const Header: React.FC = () => {
                             </Link>
                         ))}
                     </ButtonGroup>
-                    <Button variant="outlined" color="secondary" onClick={handleLogout}>
-                        Выход
-                    </Button>
+                    <ButtonGroup>
+                        <Button variant="outlined" color="secondary" onClick={handleLogout}>
+                            Выход
+                        </Button>
+                        <Link to={'/profile'}>
+                            <Button variant="outlined">Мой профиль</Button>
+                        </Link>
+                    </ButtonGroup>
                 </div>
             }
         </div>
