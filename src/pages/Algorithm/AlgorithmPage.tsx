@@ -17,16 +17,16 @@ const AlgorithmPage: React.FC = () => {
         }
 
         const formData = new FormData();
-        formData.append('image', image);
+        formData.append('photo', image);
 
         try {
-            const response = await axios.post('http://localhost:8080/cam', formData, {
+            const response = await axios.post('http://127.0.0.1:8000/cam', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-            const { vehicles } = response.data;
-            setFreeSpots(parkingSpots - vehicles);
+            const { vehicle_count } = await response.data;
+            setFreeSpots(parkingSpots - vehicle_count);
         } catch (error) {
             console.error('Ошибка при отправке изображения', error);
         }
