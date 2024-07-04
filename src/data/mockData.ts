@@ -53,3 +53,11 @@ export const initialData: CarType[] = [
     additionalInfo: "Вместимость 50 пассажиров, городской"
   }
 ];
+
+
+export const carsData = [
+  { number: 'A123BC', type: 'Легковой автомобиль' },
+  { number: 'B456DE', type: 'Лёгкий грузовик' },
+  { number: 'C789FG', type: 'Грузовик' },
+  { number: 'D321GH', type: 'Автобус' },
+];
