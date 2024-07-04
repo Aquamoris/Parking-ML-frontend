@@ -9,7 +9,7 @@ interface IModal {
 }
 
 function countPlaces(amount: number, percent: number) {
-    return Math.floor(amount * percent);
+    return amount - Math.floor(amount * percent);
 }
 
 const Modal: React.FC<Partial<IModal>> = ({ address, amount, color, close }) => {
@@ -27,6 +27,7 @@ const Modal: React.FC<Partial<IModal>> = ({ address, amount, color, close }) => 
     return (
         <div className={styles.modal} onClick={close}>
             <div className={styles.content}>
+                <p>Обновлено 1 минуту назад</p>
                 {address ? <div>Адрес: {address}</div> : null }
                 <div>Свободных мест: {freeAmount}</div>
                 {amount ? <div>Всего мест: {amount}</div> : null}

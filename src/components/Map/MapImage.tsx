@@ -15,11 +15,11 @@ const MapImage: React.FC<IMapPage> = React.memo(({ area }) => {
     const data = [
         { top: '220px', left: '750px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр', address: 'Батарейная', amount: 52 },
         { top: '900px', left: '800px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр', address: 'Набережная', amount: 75 },
-        { top: '820px', left: '1150px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр' },
-        { top: '780px', left: '1450px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр' },
-        { top: '720px', left: '1800px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр' },
-        { top: '330px', left: '1800px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр' },
-        { top: '310px', left: '1270px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр' },
+        { top: '820px', left: '1150px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр', address: 'Центральная', amount: 24 },
+        { top: '780px', left: '1450px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр', address: 'Светланская', amount: 12 },
+        { top: '720px', left: '1800px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр', address: 'Алеутская', amount: 34 },
+        { top: '330px', left: '1800px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр', address: 'Покровский парк', amount: 21 },
+        { top: '310px', left: '1270px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр', address: 'Гоголя', amount: 18 },
 
         { top: '1090px', left: '1130px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район' },
         { top: '160px', left: '800px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район' },
