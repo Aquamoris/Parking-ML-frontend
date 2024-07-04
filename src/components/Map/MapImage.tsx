@@ -20,11 +20,11 @@ const MapImage: React.FC<IMapPage> = React.memo(({ area }) => {
         { top: '330px', left: '1800px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр', address: 'Покровский парк', amount: 21, time: '7 минут' },
         { top: '310px', left: '1270px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр', address: 'Гоголя', amount: 18, time: '5 минут' },
 
-        { top: '1090px', left: '1130px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район' },
-        { top: '160px', left: '800px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район' },
-        { top: '850px', left: '1520px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район' },
-        { top: '550px', left: '1250px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район' },
-        { top: '860px', left: '460px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район' },
+        { top: '1090px', left: '1130px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район', address: 'Проспект кр. знамени', amount: 60, time: '7 минут' },
+        { top: '160px', left: '800px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район', address: 'Хабаровская', amount: 72, time: '5 минут'  },
+        { top: '850px', left: '1520px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район', address: 'Проспект Острякова', amount: 37, time: '7 минут'  },
+        { top: '550px', left: '1250px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район', address: 'Океанский проспект', amount: 35, time: '9 минут'  },
+        { top: '860px', left: '460px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район', address: 'Партизанский проспект', amount: 44, time: '5 минут'  },
     ]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -40,11 +40,11 @@ const MapImage: React.FC<IMapPage> = React.memo(({ area }) => {
             { top: '330px', left: '1800px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр', address: 'Покровский парк', amount: 21, time: '1 минуту' },
             { top: '310px', left: '1270px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Район центр', address: 'Гоголя', amount: 18, time: '1 минуту' },
 
-            { top: '1090px', left: '1130px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район' },
-            { top: '160px', left: '800px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район' },
-            { top: '850px', left: '1520px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район' },
-            { top: '550px', left: '1250px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район' },
-            { top: '860px', left: '460px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район' },
+            { top: '1090px', left: '1130px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район', address: 'Проспект кр. знамени', amount: 60, time: '1 минуту' },
+            { top: '160px', left: '800px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район', address: 'Хабаровская', amount: 72, time: '1 минуту'  },
+            { top: '850px', left: '1520px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район', address: 'Проспект Острякова', amount: 37, time: '1 минуту'  },
+            { top: '550px', left: '1250px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район', address: 'Океанский проспект', amount: 35, time: '1 минуту'  },
+            { top: '860px', left: '460px', fill: colors[Math.floor(Math.random() * colors.length)], area: 'Первореченский район', address: 'Партизанский проспект', amount: 44, time: '1 минуту'  },
         ]);
 
         setTimeout(() => {
